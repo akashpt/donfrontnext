@@ -41,27 +41,10 @@ const ProfilePage = () => {
       </Head>
 
       <SectionMain>
-        <SectionTitleLineWithButton icon={mdiAccount} title="Profile" main>
-          <Button
-            href="https://github.com/justboil/admin-one-react-tailwind"
-            target="_blank"
-            icon={mdiGithub}
-            label="Star on GitHub"
-            color="contrast"
-            roundedFull
-            small
-          />
-        </SectionTitleLineWithButton>
-
-        <CardBoxUser className="mb-6" />
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <SectionTitleLineWithButton icon={mdiAccount} title="Profile" main></SectionTitleLineWithButton>
+        <div className="grid grid-cols-1 lg:grid-cols-1">
           <div className="flex flex-col">
-            <CardBox className="mb-6">
-              <FormField label="Avatar" help="Max 500kb">
-                <FormFilePicker label="Upload" color="info" icon={mdiUpload} />
-              </FormField>
-            </CardBox>
+
 
             <CardBox className="flex-1" hasComponentLayout>
               <Formik
@@ -71,26 +54,43 @@ const ProfilePage = () => {
                 <Form className="flex flex-col flex-1">
                   <CardBoxComponentBody>
                     <FormField
-                      label="Name"
-                      help="Required. Your name"
-                      labelFor="name"
-                      icons={[mdiAccount]}
+                        label="Name"
+                        help="Required. Your name"
+                        labelFor="name"
+                        icons={[mdiAccount]}
                     >
-                      <Field name="name" id="name" placeholder="Name" />
+                      <Field name="name" id="name" placeholder="Name"/>
                     </FormField>
                     <FormField
-                      label="E-mail"
-                      help="Required. Your e-mail"
-                      labelFor="email"
-                      icons={[mdiMail]}
+                        label="E-mail"
+                        help="Required. Your e-mail"
+                        labelFor="email"
+                        icons={[mdiMail]}
                     >
-                      <Field name="email" id="email" placeholder="E-mail" />
+                      <Field name="email" id="email" placeholder="E-mail"/>
                     </FormField>
+                    <div className="grid grid-cols-2 gap-4 mb-4"> {/* Grid for Name & Username */}
+                      <FormField label="Username" labelFor="username" icons={[mdiAccount]}>
+                        <Field type="text" id="username" name="username" placeholder="Username"/>
+                      </FormField>
+                      <FormField label="Mobile" labelFor="mobile">
+                        <Field type="tel" id="mobile" name="mobile" placeholder="Mobile"/>
+                      </FormField>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4 mb-4"> {/* Grid for Email & Mobile */}
+                      <FormField label="Gender" labelFor="gender">
+                        <Field type="text" id="gender" name="gender" placeholder="Gender"/>
+                      </FormField>
+                      <FormField label="Age" labelFor="age">
+                        <Field type="number" id="age" name="age" placeholder="Age"/>
+                      </FormField>
+                    </div>
                   </CardBoxComponentBody>
                   <CardBoxComponentFooter>
                     <Buttons>
-                      <Button color="info" type="submit" label="Submit" />
-                      <Button color="info" label="Options" outline />
+                      <Button color="info" type="submit" label="Submit"/>
+                      <Button color="info" label="Options" outline/>
                     </Buttons>
                   </CardBoxComponentFooter>
                 </Form>
@@ -100,19 +100,19 @@ const ProfilePage = () => {
 
           <CardBox hasComponentLayout>
             <Formik
-              initialValues={{
-                currentPassword: '',
-                newPassword: '',
-                newPasswordConfirmation: '',
-              }}
-              onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
+                initialValues={{
+                  currentPassword: '',
+                  newPassword: '',
+                  newPasswordConfirmation: '',
+                }}
+                onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
             >
               <Form className="flex flex-col flex-1">
                 <CardBoxComponentBody>
                   <FormField
-                    label="Current password"
-                    help="Required. Your current password"
-                    labelFor="currentPassword"
+                      label="Current password"
+                      help="Required. Your current password"
+                      labelFor="currentPassword"
                     icons={[mdiAsterisk]}
                   >
                     <Field

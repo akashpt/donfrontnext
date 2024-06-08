@@ -6,6 +6,7 @@ import {
   mdiGithub,
   mdiMonitorCellphone,
   mdiReload,
+  mdiHandHeart
 } from '@mdi/js'
 import Head from 'next/head'
 import React, { useState } from 'react'
@@ -48,15 +49,7 @@ const DashboardPage = () => {
       </Head>
       <SectionMain>
         <SectionTitleLineWithButton icon={mdiChartTimelineVariant} title="Overview" main>
-          <Button
-            href="https://github.com/justboil/admin-one-react-tailwind"
-            target="_blank"
-            icon={mdiGithub}
-            label="Star on GitHub"
-            color="contrast"
-            roundedFull
-            small
-          />
+
         </SectionTitleLineWithButton>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-6">
@@ -67,17 +60,17 @@ const DashboardPage = () => {
             icon={mdiAccountMultiple}
             iconColor="success"
             number={512}
-            label="Clients"
+            label="Users"
           />
           <CardBoxWidget
             trendLabel="16%"
             trendType="down"
             trendColor="danger"
-            icon={mdiCartOutline}
+            icon={mdiHandHeart}
             iconColor="info"
             number={7770}
-            numberPrefix="$"
-            label="Sales"
+            numberPrefix="₹"
+            label="Donations"
           />
           <CardBoxWidget
             trendLabel="Overflow"

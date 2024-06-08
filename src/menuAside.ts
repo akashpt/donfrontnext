@@ -21,6 +21,26 @@ const menuAside: MenuAsideItem[] = [
     label: 'Dashboard',
   },
   {
+    href: '/profile',
+    label: 'Profile',
+    icon: mdiAccountCircle,
+  },
+  {
+    href: '/donation',
+    icon: mdiMonitor,
+    label: 'Donation',
+  },
+  {
+    href: '/report',
+    icon: mdiMonitor,
+    label: 'Reports',
+  },
+  {
+    href: '/masters',
+    icon: mdiMonitor,
+    label: 'Masters',
+  },
+  {
     href: '/tables',
     label: 'Tables',
     icon: mdiTable,
@@ -45,11 +65,7 @@ const menuAside: MenuAsideItem[] = [
     label: 'Styles',
     icon: mdiPalette,
   },
-  {
-    href: '/profile',
-    label: 'Profile',
-    icon: mdiAccountCircle,
-  },
+
   {
     href: '/login',
     label: 'Login',
